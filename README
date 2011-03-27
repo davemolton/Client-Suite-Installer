@@ -1,0 +1,13 @@
+New Installations should only run the ReefAngelClientSuite.msi installer.  No need to run the UpgradeAssistant.
+
+Upgrading from version 2.0 to 2.1 follow these directions:
+
+-From the Client, browse to Settings -> General and launch the RA Service Dash.
+-Stop both Logger and Listener services.  Exit Service Dash.
+-Fully close the Client by going to File->Exit or by right clicking the fish icon in the system tray and choosing exit.
+-Run the RAClientMigrate application and choose "Backup".  Exit the application.
+-From the Control Panel, uninstall the ReefAngel Client Suite.
+-Run the ReefAngel Client Suite 2.1 installer and complete successfully.
+-Before opening anything, run the RAClientMigrate application again, and this time choose "Restore".  Exit.
+-Run the UpgradeAssistant.exe and make sure it finishes successfully. 
+-Finished upgrade.  Your new 2.1 installation should include your previous settings, historical data and relay profiles.
