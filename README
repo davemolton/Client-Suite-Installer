@@ -1,13 +1,36 @@
-New Installations should only run the ReefAngelClientSuite.msi installer.  No need to run the UpgradeAssistant.
+Beta 3.0 Changelog:
 
-Upgrading from version 2.0 to 2.1 follow these directions:
-
--From the Client, browse to Settings -> General and launch the RA Service Dash.
--Stop both Logger and Listener services.  Exit Service Dash.
--Fully close the Client by going to File->Exit or by right clicking the fish icon in the system tray and choosing exit.
--Run the RAClientMigrate application and choose "Backup".  Exit the application.
--From the Control Panel, uninstall the ReefAngel Client Suite.
--Run the ReefAngel Client Suite 2.1 installer and complete successfully.
--Before opening anything, run the RAClientMigrate application again, and this time choose "Restore".  Exit.
--Run the UpgradeAssistant.exe and make sure it finishes successfully. 
--Finished upgrade.  Your new 2.1 installation should include your previous settings, historical data and relay profiles.
+- Dev lib 1.x.x support.
+- Fixed Celsius/Farenheit radio buttons not getting saved properly.  (Buttons were blank when viewed a second time)
+- Memory tab now supports celsius temperatures (20-32 degrees) when Celsius is set as temperature style in Settings.
+- Added Date and Time formatting options in Settings->General which can modify chart/grid/home page date/times
+- Refresh the ip/port or com/baud values on the settings->general tab after modifying them through the service dash.
+- #define wifi verification during install.  
+- View defined features from the client when the libraries folder is defined.
+- Broke apart PWM and pH groups in Memory Tab
+- Grouped together dosing fields to make it more intuitive which ones work together on the controller
+- Added seconds (s) labels to timers fields on memory tab.
+- While the 2:00 connection countdown timer is active and counting on the status bar, it can be clicked to cancel the countdown and attempt reconnect immediately.
+- Added new menu item (Settings -> Memory Utility) to modify any memory location
+- Fixed issue where a failed memory refresh would show all controls on screen with blank/0 values
+- Added scheduled task that fires a cleanup executable to remove old records from database.  Execution interval and record timespan are user configurable.
+- Added a third service (ReefAngelNotifier) to handle sending email/sms notification for temps and pH outside defined threshold.  Also this new service will handle pushing parameters
+  to reefangel.com on a 5 minute interval.  No longer does the Client need to be running for these operations to take place.
+- Added a notification layer for all three services so the Client can be updated realtime of any issues/jobs the service performed.
+- Created a notification panel on the main client screen to handle all incoming service notifications and display to user/allow for deleting.
+- IP Camera support (MJPEG)
+- Implemented database encryption for locally stored email address/password and Portal Key.
+- Portal Integration. (Sync historic params, temp + relay labels both ways).
+- Ability to change Listener settings from the client without the use of the ReefAngel Dash board and without restarting services manually.
+- A Forum Id is now required to push data to the Portal from the Client (USB Only)
+- Fixed bug in the relay profiles form that stopped a user from deleting or creating a new profile after editing one.
+- Update Relay box image to correctly show outlet numbers on the settings form.
+- Converted application to use the .net 4.0 client profile.
+- The enabled temp/pH chart series will be remebered between application shutdown and startup cycles.
+- Created a new installer using InstallShield.
+- Added a calculator tab for most common Mag/Alk/Cal dosing supplements. 
+- Added ability to scan local network for the Reef Angel Wifi Adapter during install.
+- Expansion support
+  - PWM
+  - Salinity
+  - Vortech RF for pumps.
