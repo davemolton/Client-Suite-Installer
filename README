@@ -1,3 +1,9 @@
+Beta 3.0.1 Changelog:
+- Fixed a bug that would not send parameters to the Reef Angel portal when using USB
+- Removed MH Light settings from the Memory Tab
+- Removed Unused ATO memory references from the Memory Tab as well as the memory utility.
+- Updated the Memory INI file to include the latest memory location (329=Mem_I_SalTempComp) present in the dev libs that would cause a memory tab refresh to fail.
+
 Beta 3.0 Changelog:
 
 - Dev lib 1.x.x support.
